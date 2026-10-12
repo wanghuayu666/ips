@@ -9,16 +9,3 @@
 [2606:4700:57:7ccd:6c40:3705:7c3c:1374]:443#东京9
 [2606:4700:5a:c242:5d53:fa32:f69a:b772]:443#东京10
 43.175.131.30:443#HKG-香港-01
-sub://zrf.zrf.me#周润发
-sub://sub.keaeye.icu#文烨
-sub://sub.mot.cloudns.biz#Kristi
-sub://sub.lzjbaby.com#辣子鸡
-sub://sub.cmliussss.net#CM
-sub://sub.mia.xx.kg#𝓜𝓲𝓪
-sub://owo.o00o.ooo#𝙈𝙤𝙞𝙨𝙩_𝙍
-sub://sub.danfeng.eu.org#DanFeng
-sub://loli.sub.us.ci#洛璃
-sub://cm.soso.edu.kg#天诚
-sub://sub.xdu.qzz.io#辣椒炒肉少放辣
-sub://sub.995677.xyz#S5公益
-sub://sub.pjq.cc.cd#广移专属
