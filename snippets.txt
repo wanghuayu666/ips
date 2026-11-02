@@ -8,7 +8,7 @@ function 解码64(文本) {
 }
 
 // --- 硬编码配置 ---
-const 认证令牌 = 'f64bdc57-0f54-4705-bf75-cfd646d98c06';
+const 认证令牌 = '785dfc76-510c-4e34-86b6-15c275341f3e';
 let 回退地址 = '';
 const 代理5配置 = '';
 // 手动指定地区（留空则自动检测，可选值：US、SG、JP、HK、KR、DE、SE、NL、FI、GB）
@@ -16,7 +16,7 @@ const 手动工作器地区 = '';
 // D短地址（自定义路径，留空则使用UUID路径，支持多级路径如：mypath 或 path/to/sub）
 const 自定义路径 = '';
 // GitHub订阅URL（硬编码）
-const 仓库优选网址 = 'https://raw.githubusercontent.com/qwer-search/bestip/refs/heads/main/kejilandbestip.txt';
+const 仓库优选网址 = 'https://raw.githubusercontent.com/wanghuayu666/ips/refs/heads/main/youxuanip.txt';
 // 启用GitHub优选IP（true启用，false禁用）
 const 启用仓库优选 = true;
 // 启用其他优选（域名优选，true启用，false禁用）
