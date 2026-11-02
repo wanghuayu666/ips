@@ -322,7 +322,9 @@ async function 拉取并解析新地址() {
     const 文本 = await 响应.text();
     const 结果列表 = [];
     const 行列表 = 文本.trim().replace(/\r/g, "").split('\n');
-    const 正则 = /^([^:]+):(\d+)#(.*)$/;
+    // 支持：[v6]:443#名字 / v4:端口#名字 / 域名:端口#名字 / 裸 IPv6#名字（无端口默认 443）
+    const 正则 = /^(\[[0-9a-fA-F:]+\]|[^:]+):(\d+)#(.*)$/;
+    const 裸六正则 = /^([0-9a-fA-F:]{3,})#(.+)$/;
 
     for (const 行 of 行列表) {
       const 整理行 = 行.trim();
@@ -330,9 +332,18 @@ async function 拉取并解析新地址() {
       const 匹配 = 整理行.match(正则);
       if (匹配) {
         结果列表.push({
-          ip: 匹配[1],
+          ip: 匹配[1].replace(/^\[|\]$/g, ''),
           端口: parseInt(匹配[2], 10),
           name: 匹配[3].trim() || 匹配[1]
+        });
+        continue;
+      }
+      const 六匹配 = 整理行.match(裸六正则);
+      if (六匹配) {
+        结果列表.push({
+          ip: 六匹配[1],
+          端口: 443,
+          name: 六匹配[2].trim() || 六匹配[1]
         });
       }
     }
