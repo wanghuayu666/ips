@@ -5,7 +5,9 @@ import re, sys, urllib.request, pathlib
 SRC    = "https://bestcf.pages.dev/xinyitang3/ipv4.txt"
 TARGET = pathlib.Path("youxuanip.txt")
 ZW     = dict.fromkeys(map(ord, "\u200b\u200c\u200d\ufeff"), None)  # 节点名里全是零宽字符
-MIA    = re.compile(r"^.+:\d+#Mia-HK-")                             # 只认这个标记
+MIA    = re.compile(r"^.+:\d+#Mia-HK-")                             # 现有文件里的锚点
+# 源里的名字长这样：Mia优选 | HK TG:@MiaChatChannel | 27.44.142.135:10001
+HK     = re.compile(r"\bHK\b")
 
 # 1) 拉源，取 HK
 req  = urllib.request.Request(SRC, headers={"User-Agent": "curl/8"})
@@ -13,9 +15,9 @@ text = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
 
 seen, hk = set(), []
 for line in text.splitlines():
-    line = line.translate(ZW).strip()
+    line = line.translate(ZW).strip()          # 零宽清掉再判，否则 HK 永远匹配不到
     m = re.match(r"^(\d{1,3}(?:\.\d{1,3}){3}):(\d+)#(.+)$", line)
-    if not m or not re.match(r"^HK\b", m.group(3)):
+    if not m or not HK.search(m.group(3)):
         continue
     key = f"{m.group(1)}:{m.group(2)}"
     if key not in seen:
