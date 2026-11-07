@@ -1,0 +1,26 @@
+name: mia-hk-sync
+on:
+  schedule:
+    - cron: "0 20 */2 * *"    # UTC 20:00 = Asia/Shanghai 04:00，每 2 天（奇数日）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 .github/scripts/mia_hk_sync.py
+      - name: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- youxuanip.txt; then
+            echo "内容无变化，跳过提交"
+          else
+            git add youxuanip.txt
+            git commit -m "mia-hk: $(TZ=Asia/Shanghai date +%F)"
+            git push
+          fi
