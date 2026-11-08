@@ -14,3 +14,20 @@
 120.240.179.158:10001#Mia-HK-03
 27.44.142.134:10001#HK-0X
 
+cloudflare.idc.rocks:2053#电信-日本01
+auto.dolby.dpdns.org:2053#电信-日本02
+cf.877774.xyz:2053#电信-日本03
+jellyfin.roddy.eu.cc:2087#电信-日本04
+tt.78607323.xyz:443#电信-日本05
+cdn.7zz.cn:8443#电信-日本06
+www.mfyx.cn:2087#电信-日本07
+www.wuduanyun.com:2087#电信-日本08
+saas.sin.fan:8443#电信-日本09
+img.css.sd:2083#电信-日本10
+cdn.ctn32.us.kg:2096#电信-日本11
+p.etime.vip:2053#电信-日本12
+cdn.204910.best:2053#电信-日本13
+api.gzcrtw.com:443#电信-日本14
+op.chinwa.eu.cc:2087#电信-日本15
+www.5199dy.com:443#电信-日本16
+cf.nyanya.moe:2096#电信-日本17
