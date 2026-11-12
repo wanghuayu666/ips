@@ -9,7 +9,7 @@
 [2606:4700:57:6ef3:accd:afde:3a48:9dd1]:8443#CF东京-09
 [2606:4700:5a:b117:f0c8:328b:b107:4cf7]:8443#CF东京-10
 
-echo51.cf. 090227.xyz:443#威廉
+echo51.cf.090227.xyz:443#威廉
 cloudflare.idc.rocks:2053#电信-日本01
 auto.dolby.dpdns.org:2053#电信-日本02
 cf.877774.xyz:2053#电信-日本03
